@@ -4,16 +4,16 @@ import Stripe from './ui/stripe/Stripe.jsx';
 import App from './App.jsx';
 
 export const appRouter = createBrowserRouter([
-   {
-      path: '/',
-      element: <App />,
-   },
-   {
-      path: '/zerodha',
-      element: <Zerodha />,
-   },
-   {
-      path: '/stripe',
-      element: <Stripe />,
-   },
+  {
+    path: '/',
+    element: <App />,
+  },
+  {
+    path: '/zerodha',
+    element: <Zerodha />,
+  },
+  {
+    path: '/stripe',
+    element: <Stripe />,
+  },
 ]);
