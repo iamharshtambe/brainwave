@@ -2,7 +2,7 @@ import { Menu } from 'lucide-react';
 
 function Header() {
   return (
-    <div className="border-b border-gray-100 bg-white shadow-sm">
+    <div className="fixed top-0 right-0 left-0 z-50 border-b border-gray-100 bg-white shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between p-5">
         <div>
           <img
