@@ -1,8 +1,8 @@
 function HeroSection() {
   return (
-    <div className="mx-auto flex h-screen max-w-7xl flex-col items-center">
+    <div className="mx-auto flex max-w-7xl flex-col items-center">
       <img
-        className="mt-15 md:mt-30 lg:w-9/12"
+        className="mt-30 md:mt-30 lg:w-9/12"
         src="https://zerodha.com/static/images/landing.png"
         alt="hero-img"
       />
@@ -15,7 +15,7 @@ function HeroSection() {
         bonds, and more.
       </p>
 
-      <button className="mt-12 h-10 w-42 rounded-sm bg-[#387ED1] text-lg font-semibold text-white hover:bg-black">
+      <button className="mt-12 mb-12 h-10 w-42 rounded-sm bg-[#387ED1] text-lg font-semibold text-white hover:bg-black">
         Sign up for free
       </button>
     </div>
