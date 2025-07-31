@@ -7,10 +7,10 @@ function HeroSection() {
         alt="hero-img"
       />
 
-      <h1 className="mt-14 text-3xl font-semibold text-stone-600">
+      <h1 className="mt-14 text-xl font-semibold text-stone-600 md:text-3xl">
         Invest in everything
       </h1>
-      <p className="mt-4 text-center text-lg text-stone-600">
+      <p className="mt-4 px-4 text-center text-lg text-stone-600">
         Online platform to invest in stocks, derivatives, mutual funds, ETFs,
         bonds, and more.
       </p>
