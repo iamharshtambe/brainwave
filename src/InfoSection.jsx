@@ -61,7 +61,7 @@ function InfoSection() {
         </div>
       </div>
       <img
-        className="mx-auto mt-18"
+        className="mx-auto mt-18 mb-14"
         src="https://zerodha.com/static/images/press-logos.png"
         alt="press-img"
       />
