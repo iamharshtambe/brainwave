@@ -13,6 +13,9 @@ export default function App() {
           <Link to="/chips-input" className="block w-full">
             <ComponentItem itemName="Chips Input" />
           </Link>
+          <Link to="/accordian" className="block w-full">
+            <ComponentItem itemName="Accordian" />
+          </Link>
         </div>
       </div>
     </div>
