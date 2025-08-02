@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ComponentItem from './ComponentItem';
 
 export default function App() {
@@ -9,8 +10,12 @@ export default function App() {
         </h1>
 
         <div className="flex flex-col items-center gap-6">
-          <ComponentItem itemName="Chips Input" />
-          <ComponentItem itemName="Array to Zigzag String Converter" />
+          <Link to="/chips-input" className="block w-full">
+            <ComponentItem itemName="Chips Input" />
+          </Link>
+          <Link to="/array-to-zigzag-string-converter" className="block w-full">
+            <ComponentItem itemName="Array to Zigzag String Converter" />
+          </Link>
         </div>
       </div>
     </div>
