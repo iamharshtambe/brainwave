@@ -36,7 +36,7 @@ export default function ChipsInput() {
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           onKeyDown={(e) => handleKeyDown(e)}
-          className="relative mt-6 w-full rounded-2xl border border-neutral-200 bg-white px-2 py-2 hover:bg-gray-200"
+          className="relative mt-6 w-[300px] rounded-2xl border border-neutral-200 bg-white px-2 py-2 hover:bg-gray-200"
         />
 
         <div className="mx-auto mt-6 flex max-w-2xl flex-wrap items-center justify-start gap-6">
