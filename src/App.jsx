@@ -13,9 +13,6 @@ export default function App() {
           <Link to="/chips-input" className="block w-full">
             <ComponentItem itemName="Chips Input" />
           </Link>
-          <Link to="/array-to-zigzag-string-converter" className="block w-full">
-            <ComponentItem itemName="Array to Zigzag String Converter" />
-          </Link>
         </div>
       </div>
     </div>
