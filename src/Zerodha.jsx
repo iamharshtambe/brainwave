@@ -1,6 +1,8 @@
+import Footer from './Footer';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import InfoSection from './InfoSection';
+import MarketSection from './MarketSection';
 import PricingSection from './PricingSection';
 
 function Zerodha() {
@@ -10,6 +12,8 @@ function Zerodha() {
       <HeroSection />
       <InfoSection />
       <PricingSection />
+      <MarketSection />
+      <Footer />
     </div>
   );
 }
