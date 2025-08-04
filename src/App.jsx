@@ -16,6 +16,9 @@ export default function App() {
           <Link to="/accordian" className="block w-full">
             <ComponentItem itemName="Accordian" />
           </Link>
+          <Link to="/tab-switcher" className="block w-full">
+            <ComponentItem itemName="Tab Switcher" />
+          </Link>
         </div>
       </div>
     </div>
