@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
-import ChipsInput from './components/ChipsInput';
-import Accordian from './components/Accordian';
-import TabSwitcher from './components/TabSwitcher';
+import ChipsInput from './components/ChipsInput.jsx';
+import Accordian from './components/Accordian.jsx';
+import TabSwitcher from './components/TabSwitcher.jsx';
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
