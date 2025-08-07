@@ -19,6 +19,9 @@ export default function App() {
           <Link to="/tab-switcher" className="block w-full">
             <ComponentItem itemName="Tab Switcher" />
           </Link>
+          <Link to="/read-more" className="block w-full">
+            <ComponentItem itemName="Read More" />
+          </Link>
         </div>
       </div>
     </div>
