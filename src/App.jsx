@@ -10,17 +10,8 @@ export default function App() {
         </h1>
 
         <div className="flex flex-col items-center gap-6">
-          <Link to="/chips-input" className="block w-full">
-            <ComponentItem itemName="Chips Input" />
-          </Link>
           <Link to="/accordian" className="block w-full">
             <ComponentItem itemName="Accordian" />
-          </Link>
-          <Link to="/tab-switcher" className="block w-full">
-            <ComponentItem itemName="Tab Switcher" />
-          </Link>
-          <Link to="/read-more" className="block w-full">
-            <ComponentItem itemName="Read More" />
           </Link>
         </div>
       </div>
