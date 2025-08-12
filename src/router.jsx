@@ -1,7 +1,8 @@
-import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
+import { createBrowserRouter } from 'react-router-dom';
+import CounterWithUndoRedo from './components/CounterWithUndoRedo';
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
-  // { path: '/accordian', element: <Accordian /> },
+  { path: '/counter-with-undo-redo', element: <CounterWithUndoRedo /> },
 ]);

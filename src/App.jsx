@@ -10,9 +10,9 @@ export default function App() {
         </h1>
 
         <div className="flex flex-col items-center gap-6">
-          {/* <Link to="/accordian" className="block w-full">
-            <ComponentItem itemName="Accordian" />
-          </Link> */}
+          <Link to="/counter-with-undo-redo" className="block w-full">
+            <ComponentItem itemName="Counter With Undo Redo" />
+          </Link>
         </div>
       </div>
     </div>
