@@ -11,7 +11,7 @@ export default function App() {
 
         <div className="flex flex-col items-center gap-6">
           <Link to="/counter-with-undo-redo" className="block w-full">
-            <ComponentItem itemName="Counter With Undo Redo" />
+            <ComponentItem itemName="Infinite Scroll" />
           </Link>
         </div>
       </div>

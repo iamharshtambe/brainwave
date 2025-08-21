@@ -1,8 +1,8 @@
 import App from './App';
 import { createBrowserRouter } from 'react-router-dom';
-import CounterWithUndoRedo from './components/CounterWithUndoRedo';
+import InfiniteScroll from './components/InfiniteScroll';
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
-  { path: '/counter-with-undo-redo', element: <CounterWithUndoRedo /> },
+  { path: '/infinite-scroll', element: <InfiniteScroll /> },
 ]);
