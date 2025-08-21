@@ -10,7 +10,7 @@ export default function App() {
         </h1>
 
         <div className="flex flex-col items-center gap-6">
-          <Link to="/counter-with-undo-redo" className="block w-full">
+          <Link to="/infinite-scroll" className="block w-full">
             <ComponentItem itemName="Infinite Scroll" />
           </Link>
         </div>
