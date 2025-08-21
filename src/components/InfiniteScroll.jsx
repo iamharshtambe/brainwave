@@ -22,6 +22,16 @@ export default function InfiniteScroll() {
     fetchImages();
   }, [pageNumber]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(() => {});
+
+    const lastImage = document.querySelector('.image:last-child');
+
+    if (!lastImage) return;
+
+    observer.observe(lastImage);
+  });
+
   return (
     <div className="min-h-screen bg-black text-white">
       <h1 className="p-4 text-center font-bitcount text-4xl">
