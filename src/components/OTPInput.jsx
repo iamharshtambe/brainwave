@@ -15,7 +15,7 @@ export default function OTPInput() {
             <input
               type="text"
               key={index}
-              className="h-12 w-12 border border-gray-400 text-center text-white focus:border-blue-700 focus:outline-none"
+              className="mx-1 h-12 w-12 border border-gray-400 text-center text-white focus:border-blue-700 focus:outline-none"
             />
           ))}
         </div>
