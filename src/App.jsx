@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import ComponentItem from './ComponentItem';
 
-const components = [{ itemName: 'Autocomplete Search Bar' }];
+const components = [
+  { itemName: 'Autocomplete Search Bar', link: '/autocomplete-search-bar' },
+  { itemName: 'OTP Input', link: '/otp-input' },
+];
 
 export default function App() {
   return (
@@ -11,12 +14,12 @@ export default function App() {
           Component Kitchen
         </h1>
 
-        <div className="flex flex-col items-center gap-6">
-          <Link to="/autocomplete-search-bar" className="block w-full">
-            {components.map((component) => (
+        <div className="flex flex-col items-center">
+          {components.map((component) => (
+            <Link to={component.link} className="block w-full">
               <ComponentItem itemName={component.itemName} />
-            ))}
-          </Link>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
