@@ -1,5 +1,8 @@
 import App from './App';
 import { createBrowserRouter } from 'react-router-dom';
-import InfiniteScroll from './components/InfiniteScroll';
+import AutocompleteSearchBar from './components/AutocompleteSearchBar';
 
-export const router = createBrowserRouter([{ path: '/', element: <App /> }]);
+export const router = createBrowserRouter([
+  { path: '/', element: <App /> },
+  { path: '/autocomplete-search-bar', element: <AutocompleteSearchBar /> },
+]);

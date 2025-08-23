@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import ComponentItem from './ComponentItem';
 
+const components = [{ itemName: 'Autocomplete Search Bar' }];
+
 export default function App() {
   return (
     <div className="min-h-screen w-full bg-black">
@@ -10,7 +12,11 @@ export default function App() {
         </h1>
 
         <div className="flex flex-col items-center gap-6">
-          <Link to="/infinite-scroll" className="block w-full"></Link>
+          <Link to="/autocomplete-search-bar" className="block w-full">
+            {components.map((component) => (
+              <ComponentItem itemName={component.itemName} />
+            ))}
+          </Link>
         </div>
       </div>
     </div>
