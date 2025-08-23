@@ -4,10 +4,13 @@ import { useEffect, useState } from 'react';
 export default function AutocompleteSearchBar() {
   const [results, setResults] = useState([]);
   const [input, setInput] = useState('');
+  const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('https://dummyjson.com/recipes/search?q=');
+      const response = await fetch(
+        `https://dummyjson.com/recipes/search?q=${input}`,
+      );
 
       const data = await response.json();
 
@@ -29,6 +32,8 @@ export default function AutocompleteSearchBar() {
             placeholder="Search a recipe..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onFocus={() => setShowResults(true)}
+            onBlur={() => setShowResults(false)}
             className="w-full rounded-2xl border border-sky-500 bg-white px-3 py-2 text-black"
           />
 
@@ -37,13 +42,18 @@ export default function AutocompleteSearchBar() {
           </button>
         </div>
 
-        <div className="my-4 flex h-[500px] w-full flex-col overflow-y-scroll border border-white p-2 text-left">
-          {results.map((result) => (
-            <span key={result.id} className="py-2 hover:bg-neutral-800">
-              {result.name}
-            </span>
-          ))}
-        </div>
+        {showResults && (
+          <div className="my-4 flex max-h-[500px] w-full flex-col overflow-y-scroll border border-white p-2 text-left">
+            {results.map((result) => (
+              <span
+                key={result.id}
+                className="cursor-pointer py-2 hover:bg-neutral-800"
+              >
+                {result.name}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
