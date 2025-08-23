@@ -9,6 +9,11 @@ export default function AutocompleteSearchBar() {
 
   useEffect(() => {
     async function fetchData() {
+      if (!input) {
+        setResults([]);
+        return;
+      }
+
       if (cache[input]) {
         setResults(cache[input]);
         return;
@@ -53,7 +58,7 @@ export default function AutocompleteSearchBar() {
           </button>
         </div>
 
-        {showResults && (
+        {showResults && results.length > 0 && (
           <div className="my-4 flex max-h-[500px] w-full flex-col overflow-y-scroll border border-white p-2 text-left">
             {results.map((result) => (
               <span
