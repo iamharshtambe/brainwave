@@ -11,12 +11,10 @@ export default function AutocompleteSearchBar() {
 
       const data = await response.json();
 
-      setResults(data);
+      setResults(data?.recipes);
     }
     fetchData();
-  }, []);
-
-  console.log(results.recipes);
+  }, [input]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-black text-white">
@@ -25,15 +23,26 @@ export default function AutocompleteSearchBar() {
           Autocomplete Search Bar
         </h1>
 
-        <div className="mx-auto flex items-center justify-between">
+        <div className="mx-auto flex w-full items-center justify-between gap-4">
           <input
             type="text"
+            placeholder="Search a recipe..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="w-10/12 rounded-2xl border border-sky-500 bg-white px-3 py-2 text-black"
+            className="w-full rounded-2xl border border-sky-500 bg-white px-3 py-2 text-black"
           />
 
-          <Search size={36} className="cursor-pointer" />
+          <button className="cursor-pointer rounded-full bg-white px-3 py-2">
+            <Search size={24} className="text-black" />
+          </button>
+        </div>
+
+        <div className="my-4 flex h-[500px] w-full flex-col overflow-y-scroll border border-white p-2 text-left">
+          {results.map((result) => (
+            <span key={result.id} className="py-2 hover:bg-neutral-800">
+              {result.name}
+            </span>
+          ))}
         </div>
       </div>
     </div>
