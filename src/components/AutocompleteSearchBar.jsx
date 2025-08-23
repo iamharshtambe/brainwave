@@ -1,6 +1,20 @@
 import { Search } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function AutocompleteSearchBar() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://dummyjson.com/recipes/search?q=');
+
+      const data = await response.json();
+
+      setData(data);
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-black text-white">
       <div className="flex flex-col">
