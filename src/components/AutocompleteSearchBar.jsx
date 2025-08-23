@@ -53,7 +53,7 @@ export default function AutocompleteSearchBar() {
             className="w-full rounded-2xl border border-sky-500 bg-white px-3 py-2 text-black"
           />
 
-          <button className="cursor-pointer rounded-full bg-white px-3 py-2">
+          <button className="cursor-pointer rounded-full border border-sky-500 bg-white px-3 py-2">
             <Search size={24} className="text-black" />
           </button>
         </div>
