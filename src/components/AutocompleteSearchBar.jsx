@@ -16,7 +16,10 @@ export default function AutocompleteSearchBar() {
 
       setResults(data?.recipes);
     }
-    fetchData();
+
+    const timer = setTimeout(fetchData, 300);
+
+    return () => clearTimeout(timer);
   }, [input]);
 
   return (
