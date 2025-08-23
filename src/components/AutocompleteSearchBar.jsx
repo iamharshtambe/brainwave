@@ -2,7 +2,8 @@ import { Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 export default function AutocompleteSearchBar() {
-  const [data, setData] = useState([]);
+  const [results, setResults] = useState([]);
+  const [input, setInput] = useState('');
 
   useEffect(() => {
     async function fetchData() {
@@ -10,10 +11,12 @@ export default function AutocompleteSearchBar() {
 
       const data = await response.json();
 
-      setData(data);
+      setResults(data);
     }
     fetchData();
   }, []);
+
+  console.log(results.recipes);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-black text-white">
@@ -25,10 +28,12 @@ export default function AutocompleteSearchBar() {
         <div className="mx-auto flex items-center justify-between">
           <input
             type="text"
-            className="w-10/12 rounded-2xl border border-sky-500 bg-white px-2 py-1"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className="w-10/12 rounded-2xl border border-sky-500 bg-white px-3 py-2 text-black"
           />
 
-          <Search size={30} className="cursor-pointer" />
+          <Search size={36} className="cursor-pointer" />
         </div>
       </div>
     </div>
