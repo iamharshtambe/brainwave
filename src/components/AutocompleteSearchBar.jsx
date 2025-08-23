@@ -1,13 +1,19 @@
-import { Search } from 'lucide-react';
+import { ChartArea, Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 export default function AutocompleteSearchBar() {
   const [results, setResults] = useState([]);
   const [input, setInput] = useState('');
   const [showResults, setShowResults] = useState(false);
+  const [cache, setCache] = useState({});
 
   useEffect(() => {
     async function fetchData() {
+      if (cache[input]) {
+        setResults(cache[input]);
+        return;
+      }
+
       const response = await fetch(
         `https://dummyjson.com/recipes/search?q=${input}`,
       );
@@ -15,12 +21,14 @@ export default function AutocompleteSearchBar() {
       const data = await response.json();
 
       setResults(data?.recipes);
+
+      setCache((prev) => ({ ...prev, [input]: data?.recipes }));
     }
 
     const timer = setTimeout(fetchData, 300);
 
     return () => clearTimeout(timer);
-  }, [input]);
+  }, [input, cache]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-black text-white">
