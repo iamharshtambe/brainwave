@@ -11,7 +11,7 @@ export default function OTPInput() {
     if (isNaN(value)) return;
 
     const newOtpDigitCount = [...otpDigitCount];
-    newOtpDigitCount[index] = value;
+    newOtpDigitCount[index] = value.slice(-1);
     setOtpDigitCount(newOtpDigitCount);
   }
 
