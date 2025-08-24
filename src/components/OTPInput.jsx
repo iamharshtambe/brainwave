@@ -3,7 +3,15 @@ import { useState } from 'react';
 const OTP_DIGIT_COUNT = 6;
 
 export default function OTPInput() {
-  const [otpDigitCount] = useState(new Array(OTP_DIGIT_COUNT).fill(''));
+  const [otpDigitCount, setOtpDigitCount] = useState(
+    new Array(OTP_DIGIT_COUNT).fill(''),
+  );
+
+  function handleOnChange(value, index) {
+    const newOtpDigitCount = [...otpDigitCount];
+    newOtpDigitCount[index] = value;
+    setOtpDigitCount(newOtpDigitCount);
+  }
 
   return (
     <div className="mx-auto flex min-h-screen items-center justify-center bg-black text-white">
@@ -15,6 +23,8 @@ export default function OTPInput() {
             <input
               type="text"
               key={index}
+              value={otpDigitCount[index]}
+              onChange={(e) => handleOnChange(e.target.value, index)}
               className="mx-1 h-12 w-12 border border-gray-400 text-center text-white focus:border-blue-700 focus:outline-none"
             />
           ))}
