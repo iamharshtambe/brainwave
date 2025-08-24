@@ -8,6 +8,8 @@ export default function OTPInput() {
   );
 
   function handleOnChange(value, index) {
+    if (isNaN(value)) return;
+
     const newOtpDigitCount = [...otpDigitCount];
     newOtpDigitCount[index] = value;
     setOtpDigitCount(newOtpDigitCount);
