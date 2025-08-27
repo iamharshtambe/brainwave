@@ -11,7 +11,11 @@ export default function ProgressBar() {
             <div className="my-3 w-[600px] overflow-hidden rounded-2xl border-2 border-white bg-white text-black">
               <div
                 style={{ width: `${progressValue}%` }}
-                className="bg-blue-500 px-2"
+                role="progressbar"
+                aria-valuenow={progressValue}
+                aria-valuemax="100"
+                aria-valuemin="0"
+                className="bg-blue-500 px-2 py-1"
               >
                 {progressValue}%
               </div>
