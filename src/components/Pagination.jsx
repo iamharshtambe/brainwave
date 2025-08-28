@@ -25,6 +25,14 @@ export default function Pagination() {
   const startOfPage = currentPage * PAGE_SIZE;
   const endOfPage = startOfPage + PAGE_SIZE;
 
+  function goToNextPage() {
+    setCurrentPage((prev) => prev + 1);
+  }
+
+  function goToPreviousPage() {
+    setCurrentPage((prev) => prev - 1);
+  }
+
   useEffect(() => {
     async function fetchProducts() {
       const response = await fetch('https://dummyjson.com/products?limit=100');
@@ -48,25 +56,30 @@ export default function Pagination() {
       </div>
 
       <div className="flex items-center">
-        <span>
-          <ArrowLeft size={30} className="cursor-pointer hover:text-blue-700" />
-        </span>
+        <button disabled={currentPage === startOfPage}>
+          <ArrowLeft
+            onClick={goToPreviousPage}
+            size={30}
+            className="cursor-pointer hover:text-blue-700"
+          />
+        </button>
         <div className="my-8">
           {[...Array(numberOfPages).keys()].map((num) => (
             <span
               onClick={() => setCurrentPage(num)}
-              className="m-2 cursor-pointer border border-white p-3 hover:border-blue-700"
+              className={`m-2 cursor-pointer border border-white p-3`}
             >
               {num}
             </span>
           ))}
         </div>
-        <span>
+        <button disabled={currentPage === numberOfPages - 1}>
           <ArrowRight
+            onClick={goToNextPage}
             size={30}
             className="cursor-pointer hover:text-blue-700"
           />
-        </span>
+        </button>
       </div>
     </div>
   );
