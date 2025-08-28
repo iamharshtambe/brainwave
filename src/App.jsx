@@ -5,6 +5,7 @@ const components = [
   { itemName: 'Autocomplete Search Bar', link: '/autocomplete-search-bar' },
   { itemName: 'OTP Input', link: '/otp-input' },
   { itemName: 'Progress Bar', link: '/progress-bar' },
+  { itemName: 'Pagination', link: '/pagination' },
 ];
 
 export default function App() {
