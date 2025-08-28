@@ -1,3 +1,4 @@
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const PAGE_SIZE = 10;
@@ -46,12 +47,26 @@ export default function Pagination() {
         ))}
       </div>
 
-      <div className="my-8">
-        {[...Array(numberOfPages).keys()].map((num) => (
-          <span className="m-2 cursor-pointer border border-white p-3 hover:border-blue-700">
-            {num}
-          </span>
-        ))}
+      <div className="flex items-center">
+        <span>
+          <ArrowLeft size={30} className="cursor-pointer hover:text-blue-700" />
+        </span>
+        <div className="my-8">
+          {[...Array(numberOfPages).keys()].map((num) => (
+            <span
+              onClick={() => setCurrentPage(num)}
+              className="m-2 cursor-pointer border border-white p-3 hover:border-blue-700"
+            >
+              {num}
+            </span>
+          ))}
+        </div>
+        <span>
+          <ArrowRight
+            size={30}
+            className="cursor-pointer hover:text-blue-700"
+          />
+        </span>
       </div>
     </div>
   );
