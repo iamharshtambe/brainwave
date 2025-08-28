@@ -17,13 +17,16 @@ function Product({ productObj }) {
 
 export default function Pagination() {
   const [products, setPrpducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const numberOfProducts = products.length;
   const numberOfPages = Math.ceil(numberOfProducts / PAGE_SIZE);
+  const startOfPage = currentPage * PAGE_SIZE;
+  const endOfPage = startOfPage + PAGE_SIZE;
 
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch('https://dummyjson.com/products');
+      const response = await fetch('https://dummyjson.com/products?limit=100');
 
       const data = await response.json();
 
@@ -37,15 +40,17 @@ export default function Pagination() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-black pb-10 text-white">
       <h1 className="p-4 font-bitcount text-4xl">Pagination</h1>
 
-      <div className="mt-6 mb-8">
-        {[...Array(10).keys()].map((num) => (
-          <span className="m-2 border border-white p-3">{num}</span>
+      <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-5">
+        {products.slice(startOfPage, endOfPage).map((product) => (
+          <Product key={product.id} productObj={product} />
         ))}
       </div>
 
-      <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-5">
-        {products.map((product) => (
-          <Product key={product.id} productObj={product} />
+      <div className="my-8">
+        {[...Array(numberOfPages).keys()].map((num) => (
+          <span className="m-2 cursor-pointer border border-white p-3 hover:border-blue-700">
+            {num}
+          </span>
         ))}
       </div>
     </div>
