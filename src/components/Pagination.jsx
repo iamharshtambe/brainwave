@@ -67,7 +67,7 @@ export default function Pagination() {
           {[...Array(numberOfPages).keys()].map((num) => (
             <span
               onClick={() => setCurrentPage(num)}
-              className={`m-2 cursor-pointer border p-3 ${num === currentPage ? 'border-blue-700' : 'border-white'}`}
+              className={`m-2 cursor-pointer border p-3 ${num === currentPage ? 'border-blue-700 text-blue-700' : 'border-white'}`}
             >
               {num}
             </span>
