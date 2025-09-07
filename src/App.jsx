@@ -6,6 +6,7 @@ const components = [
   { itemName: 'OTP Input', link: '/otp-input' },
   { itemName: 'Progress Bar', link: '/progress-bar' },
   { itemName: 'Pagination', link: '/pagination' },
+  { itemName: 'Todo List', link: '/todolist' },
 ];
 
 export default function App() {
