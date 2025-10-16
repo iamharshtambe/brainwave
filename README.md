@@ -1,1 +1,1 @@
-# Brainwave
+**Brainwave** is a full-stack Learning Management System (LMS) that empowers instructors to create and manage courses while enabling students to learn, track progress, and earn certifications seamlessly. Built with modern web technologies, it offers secure authentication, real-time interaction, and a responsive, user-friendly interface.
