@@ -1,3 +1,10 @@
+import { ThemeToggle } from "@/components/ui/toggle-theme";
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <ThemeToggle />
+      <h1>Home</h1>
+    </div>
+  );
 }
